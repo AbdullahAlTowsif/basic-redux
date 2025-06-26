@@ -1,18 +1,18 @@
-import './App.css'
-import { decrement, increment } from './redux/features/counter/counterSlice';
-import { useAppDispatch, useAppSelector } from './redux/hook';
+import "./App.css";
+import { decrement, increment } from "./redux/features/counter/counterSlice";
+import { useAppDispatch, useAppSelector } from "./redux/hook";
 
 function App() {
   const dispatch = useAppDispatch();
-  const {count} = useAppSelector((state) => state.counter);
+  const { count } = useAppSelector((state) => state.counter);
 
   const handleIncrement = (amount: number) => {
     dispatch(increment(amount));
-  }
+  };
 
   const handleDecrement = () => {
     dispatch(decrement());
-  }
+  };
 
   return (
     <div>
@@ -22,7 +22,7 @@ function App() {
       <div>{count}</div>
       <button onClick={handleDecrement}>Decrement</button>
     </div>
-  )
+  );
 }
 
 export default App;
